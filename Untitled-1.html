@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>limer2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .mainbar {
+            height: 7vh;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 12% 78% 10%;
+            grid-template-rows: 40px 10px;
+            padding-left: 5px;
+            padding-top: 5px;
+            background-color: rgb(38, 38, 38);
+            /* border: 1px solid; */
+        }
+
+        .smallbox {
+            /* height: 6vh;
+            width: 15%; */
+            /* border: 1px solid; */
+        }
+
+        .img1 {
+            height: 100%;
+            width: 100%;
+        }
+
+        .button1 {
+            height: 6vh;
+            width: 80%;
+            border-radius: 5px;
+            background-color: rgb(130, 180, 64);
+            color: white;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bolder;
+            border: none;
+        }
+
+        .parent1 {
+            height: auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 100px;
+            /* border: 1px solid; */
+            /* column-gap: 100px; */
+
+        }
+
+        .mainbar2 {
+            height: 20vh;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 20% 35% 45%;
+            grid-template-rows: 60px 60px 60px;
+            padding-left: 40px;
+            padding-top: 40px;
+            /* border: 1px solid; */
+        }
+
+        .smallbox2 {
+            display: grid;
+            grid-template-columns: 15% 15% 15% 15% 15%;
+            grid-template-rows: 35px;
+            padding-left: 10px;
+            padding-top: 8px;
+            gap: 10px;
+            /* border: 1px solid; */
+
+        }
+
+        .iconboxes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .bars:hover {
+            color: rgb(255, 50, 114);
+            cursor: pointer;
+        }
+
+
+        .smallbox3 {
+            display: grid;
+            grid-template-columns: 5%;
+            grid-template-rows: 50px;
+            padding-left: 60%;
+            padding-top: 8px;
+            gap: 10px;
+            cursor: pointer;
+            /* border: 1px solid; */
+
+        }
+
+        .content {
+            height: 9vh;
+            width: 100%;
+            position: relative;
+            display: grid;
+            grid-template-columns: 15% 15% 19% 14% 19% 5%;
+            grid-template-rows: 50px;
+            padding-left: 5%;
+            /* border: 1px solid red; */
+
+
+
+        }
+
+        .list22 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 20px;
+            color: rgb(255, 82, 135);
+        }
+
+        .list {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 20px;
+
+            list-style: none;
+        }
+
+        .list:hover {
+            color: rgb(255, 82, 135);
+            cursor: pointer;
+        }
+
+        .listbox {
+            height: 47vh;
+            width: 40%;
+            left: 5%;
+            top: 80px;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s linear;
+            box-shadow: 1px 2px 12px 2px gray;
+            z-index: 2;
+            background-color: white;
+            border-top: 3px solid rgba(255, 50, 115, 0.808);
+
+        }
+
+        .list:hover .listbox {
+            visibility: visible;
+            opacity: 1;
+            margin-top: -28px;
+            cursor: pointer;
+
+        }
+
+        .listbox2 {
+            height: 47vh;
+            width: 40%;
+            left: 15%;
+            top: 80px;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s linear;
+            z-index: 2;
+            background-color: white;
+            box-shadow: 1px 2px 12px 2px gray;
+            border-top: 3px solid rgba(255, 50, 115, 0.808);
+        }
+
+        .list:hover .listbox2 {
+            visibility: visible;
+            opacity: 1;
+            margin-top: -28px;
+            cursor: pointer;
+        }
+
+        .listbox3 {
+            height: 47vh;
+            width: 40%;
+            left: 30%;
+            top: 80px;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s linear;
+            z-index: 2;
+            background-color: white;
+            box-shadow: 1px 2px 12px 2px gray;
+            border-top: 3px solid rgba(255, 50, 115, 0.808);
+        }
+
+        .list:hover .listbox3 {
+            visibility: visible;
+            opacity: 1;
+            margin-top: -28px;
+            cursor: pointer;
+        }
+
+        .listbox4 {
+            height: 47vh;
+            width: 40%;
+            left: 50%;
+            top: 80px;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s linear;
+            z-index: 2;
+            background-color: white;
+            box-shadow: 1px 2px 12px 2px gray;
+            border-top: 3px solid rgba(255, 50, 115, 0.808);
+
+        }
+
+        .list:hover .listbox4 {
+            visibility: visible;
+            opacity: 1;
+            margin-top: -28px;
+            cursor: pointer;
+        }
+
+
+
+        .content2 {
+            height: 7vh;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-top: 5px;
+            border-top: 1px solid rgb(216, 213, 213);
+        }
+
+        .list2 {
+            list-style: none;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: lighter;
+            padding-left: 18px;
+            padding-top: 10px;
+            color: black;
+        }
+
+        .divbox {
+            height: 7vh;
+            width: 10%;
+            left: -10%;
+            top: 0;
+            position: absolute;
+            opacity: 1;
+            transition: all linear 0.3s;
+            background-color: rgba(255, 50, 115, 0.808);
+
+        }
+
+
+
+
+
+
+        .list2:hover .divbox {
+            width: 100%;
+            opacity: 0;
+            left: 5%;
+
+        }
+
+
+
+
+
+
+        .box1 {
+            margin-left: 20%;
+            margin-top: 18px;
+            /* border: 1px solid; */
+        }
+
+        .fa:hover {
+            color: rgb(255, 82, 135);
+            cursor: pointer;
+        }
+
+        .bigtextbox {
+            height: 50vh;
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            /* border: 1px solid; */
+
+
+        }
+
+        .box2 {
+            height: 8vh;
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .text {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: lighter;
+            color: gray;
+        }
+
+        .box3 {
+            height: 30vh;
+            width: 90%;
+            position: relative;
+            /* border: 1px solid; */
+        }
+
+        .Circle {
+            height: 150px;
+            width: 150px;
+            border-radius: 100px;
+            background-color: rgb(255, 233, 145);
+            /* border: 1px solid; */
+
+        }
+
+        .cricle2 {
+            height: 40px;
+            width: 40px;
+            left: 73%;
+            top: -40px;
+            z-index: 0;
+            position: absolute;
+            border-radius: 100px;
+            background-color: rgb(165, 255, 214);
+            /* border: 1px solid; */
+        }
+
+        .spn {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 60px;
+            font-weight: bolder;
+            color: rgb(255, 193, 251);
+        }
+
+        .longdiv {
+            height: 10vh;
+            width: 95%;
+            left: 5%;
+            top: 40px;
+            position: absolute;
+            /* border: 1px solid; */
+        }
+
+        .text2 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 65px;
+            font-weight: bolder;
+            color: rgba(0, 0, 0, 0.836);
+        }
+
+        .para {
+            text-align: center;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 18px;
+            line-height: 25px;
+            padding-top: 18px;
+            color: rgba(0, 0, 0, 0.836);
+        }
+
+        .button2 {
+            height: 9vh;
+            width: 25%;
+            border-radius: 100px;
+            margin-top: 20px;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 18px;
+            font-weight: bolder;
+            color: white;
+            background-color: rgb(206, 140, 254);
+            border: none;
+        }
+
+        .button2:hover {
+            background-color: rgb(157, 85, 209);
+            cursor: pointer;
+        }
+
+        .parent2 {
+            height: auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            grid-template-rows: 320px 320px 320px 320px 320px;
+            /* border: 1px solid; */
+        }
+
+        .picsbox {
+            position: relative;
+            /* border: 1px solid; */
+        }
+
+        .whitebox {
+            height: 86%;
+            width: 90%;
+            left: 5%;
+            top: 7%;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.76);
+            transform: scale(0.6) rotateY(0deg);
+            transition: 0.3s linear;
+            opacity: 0;
+            /* border: 1px solid; */
+        }
+
+        .picsbox:hover .whitebox {
+            transform: scale(1) rotateY(180deg);
+            opacity: 1;
+
+        }
+
+
+        .smallbar {
+            height: 25%;
+            width: 86%;
+            left: 14%;
+            top: 60%;
+            opacity: 0;
+            position: absolute;
+            /* background-color: rgba(255, 255, 255, 0.658); */
+            transition: all 0.4s linear;
+            /* border: 1px solid; */
+
+
+
+        }
+
+        .picsbox:hover .smallbar {
+            margin-top: -25%;
+            transition-delay: 0.5s;
+            opacity: 1;
+
+
+
+
+
+        }
+
+        .smallbar2 {
+            height: 25%;
+            width: 50%;
+            left: 30%;
+            top: 60%;
+            opacity: 0;
+            position: absolute;
+            /* background-color: rgba(255, 255, 255, 0.658); */
+            transition: all 0.4s linear;
+            /* border: 1px solid; */
+
+
+
+        }
+
+        .picsbox:hover .smallbar2 {
+            margin-top: -15%;
+            transition-delay: 0.5s;
+            opacity: 1;
+
+
+        }
+
+
+
+
+
+
+
+
+
+        .cricle3 {
+            height: 40px;
+            width: 40px;
+            left: 15%;
+            top: 20%;
+            /* z-index: -1; */
+            position: absolute;
+            border-radius: 100px;
+            background-color: rgb(255, 233, 145);
+            /* border: 1px solid; */
+
+
+        }
+
+        .textbar {
+            height: 7vh;
+            width: 80%;
+            z-index: 2;
+            position: absolute;
+            /* border: 1px solid; */
+
+        }
+
+        .text3 {
+            text-align: center;
+            padding-left: 8%;
+            padding-top: 10%;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 18px;
+            font-weight: bolder;
+            color: black;
+        }
+
+        .text4 {
+            text-align: center;
+            padding-top: 2%;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: lighter;
+            color: black;
+
+        }
+
+        .img2 {
+            height: 100%;
+            width: 100%;
+        }
+
+        .pics1 {
+            position: relative;
+            grid-area: 2/3/4/5;
+        }
+
+        .pics2 {
+            grid-area: 4/1/2 span/1 span;
+        }
+
+        .pics3 {
+            grid-area: 5/3/1 span/2 span;
+        }
+
+        .parent3 {
+            height: 30vh;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: auto;
+            margin-top: 150px;
+            /* border: 1px solid; */
+        }
+
+        .logobox2 {
+            height: 9vh;
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .lasttext {
+            height: 6vh;
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid; */
+        }
+
+        .para2 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 15px;
+        }
+
+        .longbox {
+            height: 8vh;
+            width: 40%;
+            display: flex;
+            justify-content: space-around;
+            /* border: 1px solid; */
+        }
+
+        .iconboxes3 {
+            height: 5vh;
+            width: 15%;
+            display: flex;
+            justify-content: center;
+            /* border: 1px solid; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainbar">
+        <div class="smallbox">
+            <img class="img1"
+                src="envato_market-dde916a48af7413e54aa058fe7ae6856752fca799da4bec355f00aea904bfa19 (1).svg" alt="">
+        </div>
+        <div class="smallbox"></div>
+        <div class="smallbox">
+            <button class="button1">Buy now</button>
+        </div>
+    </div>
+    <div class="parent1">
+        <div class="mainbar2">
+            <div class="smallbox2">
+                <div class="iconboxes">
+                    <i class="fa-brands fa-facebook-f bars"></i>
+                </div>
+                <div class="iconboxes">
+                    <i class="fa-brands fa-twitter bars"></i>
+                </div>
+                <div class="iconboxes">
+                    <i class="fa-brands fa-google-plus-g bars"></i>
+                </div>
+                <div class="iconboxes">
+                    <i class="fa-brands fa-square-pinterest bars"></i>
+                </div>
+                <div class="iconboxes">
+                    <i class="fa-solid fa-bars bars"></i>
+                </div>
+            </div>
+            <div class="smallbox3">
+                <img src="logo.png" alt="">
+            </div>
+            <ul class="content">
+
+                <li class="list list22">HOME
+                    <div class="listbox">
+                        <ul class="content2">
+                            <li class="list2">Creative Home
+                                <div class="divbox"></div>
+                            </li>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Designer Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">
+                                    Portfolio
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Parallax Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Carousel Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Header Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </li>
+                <li class="list">ABOUT
+                    <div class="listbox2">
+                        <ul class="content2">
+                            <li class="list2">Creative Home
+                                <div class="divbox"></div>
+                            </li>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Designer Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">
+                                    Portfolio
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Parallax Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Carousel Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Header Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </li>
+                <li class="list">PORTFOLIO
+                    <div class="listbox3">
+                        <ul class="content2">
+                            <li class="list2">Creative Home
+                                <div class="divbox"></div>
+                            </li>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Designer Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">
+                                    Portfolio
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Parallax Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Carousel Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Header Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </li>
+                <li class="list">BLOG
+                    <div class="listbox4">
+                        <ul class="content2">
+                            <li class="list2">Creative Home
+                                <div class="divbox"></div>
+                            </li>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Designer Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">
+                                    Portfolio
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Parallax Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Carousel Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                        <ul class="content2">
+                            <ul class="content2">
+                                <li class="list2">Header Home
+                                    <div class="divbox"></div>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                </li>
+                <li class="list">CONTACT US</li>
+
+
+                <div class="box1">
+                    <i class="fa-solid fa-bars fa"></i>
+                </div>
+
+
+            </ul>
+        </div>
+        <div class="bigtextbox">
+            <div class="box2">
+                <h3 class="text">Welcome To Limerick</h3>
+            </div>
+            <div class="box3">
+                <div class="Circle"></div>
+                <div class="longdiv">
+                    <div class="cricle2"></div>
+                    <h1 class="text2">DESIGN YOUR M<span class="spn">I</span>ND</h1>
+                    <p class="para">
+                        I like to think that my work is a living, breathing embodiment of my passion for discovery.
+                        Here’s some of it.</p>
+                </div>
+            </div>
+            <button class="button2">READ MORE +</button>
+        </div>
+        <div class="parent2">
+            <div class="picsbox">
+                <img class="img2" src="http://t.commonsupport.xyz/limerick/images/gallery/15.jpg" alt="">
+                <div class="whitebox"></div>
+                <div class="smallbar">
+                    <div class="cricle3"></div>
+                    <div class="textbar">
+                        <h3 class="text3">CREATIVE PORTFOLIO</h3>
+                        <h3 class="text4">Design</h3>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="picsbox">
+                <img class="img2" src="http://t.commonsupport.xyz/limerick/images/gallery/16.jpg" alt="">
+                <div class="whitebox"></div>
+                <div class="smallbar">
+                    <div class="cricle3"></div>
+                    <div class="textbar">
+                        <h3 class="text3">CREATIVE PORTFOLIO</h3>
+                        <h3 class="text4">Design</h3>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="picsbox">
+                <img class="img2" src="http://t.commonsupport.xyz/limerick/images/gallery/17.jpg" alt="">
+                <div class="whitebox"></div>
+                <div class="smallbar">
+                    <div class="cricle3"></div>
+                    <div class="textbar">
+                        <h3 class="text3">CREATIVE PORTFOLIO</h3>
+                        <h3 class="text4">Design</h3>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="picsbox">
+                <img class="img2" src="http://t.commonsupport.xyz/limerick/images/gallery/18.jpg" alt="">
+                <div class="whitebox"></div>
+                <div class="smallbar">
+                    <div class="cricle3"></div>
+                    <div class="textbar">
+                        <h3 class="text3">CREATIVE PORTFOLIO</h3>
+                        <h3 class="text4">Design</h3>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="picsbox">
+                <img class="img2" src="http://t.commonsupport.xyz/limerick/images/gallery/19.jpg" alt="">
+                <div class="whitebox"></div>
+                <div class="smallbar">
+                    <div class="cricle3"></div>
+                    <div class="textbar">
+                        <h3 class="text3">CREATIVE PORTFOLIO</h3>
+                        <h3 class="text4">Design</h3>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="picsbox">
+                <img class="img2" src="http://t.commonsupport.xyz/limerick/images/gallery/20.jpg" alt="">
+                <div class="whitebox"></div>
+                <div class="smallbar">
+                    <div class="cricle3"></div>
+                    <div class="textbar">
+                        <h3 class="text3">CREATIVE PORTFOLIO</h3>
+                        <h3 class="text4">Design</h3>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="picsbox pics1">
+                <img class="img2" src="http://t.commonsupport.xyz/limerick/images/gallery/21.jpg" alt="">
+                <div class="whitebox"></div>
+                <div class="smallbar">
+                    <div class="cricle3"></div>
+                    <div class="textbar">
+                        <h3 class="text3">CREATIVE PORTFOLIO</h3>
+                        <h3 class="text4">Design</h3>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="picsbox ">
+                <img class="img2" src="http://t.commonsupport.xyz/limerick/images/gallery/22.jpg" alt="">
+                <div class="whitebox"></div>
+                <div class="smallbar">
+                    <div class="cricle3"></div>
+                    <div class="textbar">
+                        <h3 class="text3">CREATIVE PORTFOLIO</h3>
+                        <h3 class="text4">Design</h3>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="picsbox">
+                <img class="img2" src="http://t.commonsupport.xyz/limerick/images/gallery/23.jpg" alt="">
+                <div class="whitebox"></div>
+                <div class="smallbar">
+                    <div class="cricle3"></div>
+                    <div class="textbar">
+                        <h3 class="text3">CREATIVE PORTFOLIO</h3>
+                        <h3 class="text4">Design</h3>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="picsbox pics2">
+                <img class="img2" src="http://t.commonsupport.xyz/limerick/images/gallery/24.jpg" alt="">
+                <div class="whitebox"></div>
+                <div class="smallbar">
+                    <div class="cricle3"></div>
+                    <div class="textbar">
+                        <h3 class="text3">CREATIVE PORTFOLIO</h3>
+                        <h3 class="text4">Design</h3>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="picsbox">
+                <img class="img2" src="http://t.commonsupport.xyz/limerick/images/gallery/25.jpg" alt="">
+                <div class="whitebox"></div>
+                <div class="smallbar">
+                    <div class="cricle3"></div>
+                    <div class="textbar">
+                        <h3 class="text3">CREATIVE PORTFOLIO</h3>
+                        <h3 class="text4">Design</h3>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="picsbox">
+                <img class="img2" src="http://t.commonsupport.xyz/limerick/images/gallery/26.jpg" alt="">
+                <div class="whitebox"></div>
+                <div class="smallbar">
+                    <div class="cricle3"></div>
+                    <div class="textbar">
+                        <h3 class="text3">CREATIVE PORTFOLIO</h3>
+                        <h3 class="text4">Design</h3>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="picsbox">
+                <img class="img2" src="http://t.commonsupport.xyz/limerick/images/gallery/27.jpg" alt="">
+                <div class="whitebox"></div>
+                <div class="smallbar">
+                    <div class="cricle3"></div>
+                    <div class="textbar">
+                        <h3 class="text3">CREATIVE PORTFOLIO</h3>
+                        <h3 class="text4">Design</h3>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="picsbox">
+                <img class="img2" src="http://t.commonsupport.xyz/limerick/images/gallery/28.jpg" alt="">
+                <div class="whitebox"></div>
+                <div class="smallbar">
+                    <div class="cricle3"></div>
+                    <div class="textbar">
+                        <h3 class="text3">CREATIVE PORTFOLIO</h3>
+                        <h3 class="text4">Design</h3>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="picsbox pics3">
+                <img class="img2" src="http://t.commonsupport.xyz/limerick/images/gallery/29.jpg" alt="">
+                <div class="whitebox"></div>
+                <div class="smallbar2">
+                    <div class="cricle3"></div>
+                    <div class="textbar">
+                        <h3 class="text3">CREATIVE PORTFOLIO</h3>
+                        <h3 class="text4">Design</h3>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        
+        
+        
+    </div>
+    <div class="parent3">
+        <div class="logobox2">
+            <img src="http://t.commonsupport.xyz/limerick/images/footer-logo.png" alt="">
+        </div>
+        <div class="lasttext">
+            <p class="para2">© Copyright 2019 Limerick. All Rights Reserved</p>
+        </div>
+        <div class="longbox">
+            <div class="iconboxes3">
+                <i class="fa-solid fa-bars bars"></i>
+            </div>
+            <div class="iconboxes3">
+                <i class="fa-brands fa-facebook-f bars"></i>
+            </div>
+            <div class="iconboxes3">
+                <i class="fa-brands fa-twitter bars"></i>
+            </div>
+            <div class="iconboxes3">
+                <i class="fa-brands fa-google-plus-g bars"></i>
+            </div>
+            <div class="iconboxes3">
+                <i class="fa-solid fa-globe bars"></i>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
